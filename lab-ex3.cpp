@@ -352,16 +352,87 @@ public:
     }
 };
 
+// Ex10
+class Room
+{
+private:
+    string houseName;
+    int houseNumber;
+    string city;
+    string state;
+    int numRooms;
+    int lengths[10];
+    int breadths[10];
+    int heights[10];
+
+public:
+    Room(string name, int number, string c, string s, int num)
+    {
+        houseName = name;
+        houseNumber = number;
+        city = c;
+        state = s;
+        numRooms = num;
+    }
+
+    void addRoomDimensions(int index, int length, int breadth, int height)
+    {
+        lengths[index] = length;
+        breadths[index] = breadth;
+        heights[index] = height;
+    }
+
+    int calculateArea(int index)
+    {
+        return lengths[index] * breadths[index];
+    }
+
+    int getHeight(int index)
+    {
+        return heights[index];
+    }
+
+    int calculateTotalArea()
+    {
+        int totalArea = 0;
+        for (int i = 0; i < numRooms; ++i)
+        {
+            totalArea += calculateArea(i);
+        }
+        return totalArea;
+    }
+
+    void printHouseDetails()
+    {
+        cout << "House Details:" << endl;
+        cout << "House Name: " << houseName << endl;
+        cout << "House Number: " << houseNumber << endl;
+        cout << "City: " << city << endl;
+        cout << "State: " << state << endl;
+        cout << "Number of Rooms: " << numRooms << endl;
+        cout << "Room Details:" << endl;
+        for (int i = 0; i < numRooms; ++i)
+        {
+            cout << "Room " << i + 1 << ":" << endl;
+            cout << "  Length: " << calculateArea(i) << " units" << endl;
+            cout << "  Breadth: " << calculateArea(i) << " units" << endl;
+            cout << "  Height: " << getHeight(i) << " units" << endl;
+            cout << "  Area: " << calculateArea(i) << " square units" << endl;
+        }
+        cout << "Total Area of the House: " << calculateTotalArea() << " square units" << endl;
+    }
+};
+
 int main()
 {
     cout << "Ex1\n";
     ex1();
-    
+
     cout << "Ex2\n";
     Numbers sum;
     sum.set(1, 2);
     sum.add();
-    
+
     cout << "Ex3\n";
     Bank account;
     account.check();
@@ -369,7 +440,7 @@ int main()
     account.withdraw(200);
     account.withdraw(50);
     account.check();
-    
+
     cout << "Ex4\n";
     Student student("Bar", 1);
     student.display();
@@ -378,16 +449,16 @@ int main()
     student.add(15);
     cout << student.grade() << endl;
     student.display();
-    
+
     cout << "Ex5\n";
     Employee employee("Foo", 2, 10, 10);
     employee.salary();
     employee.display();
-    
+
     cout << "Ex6\n";
     Product product("Baz", 3, 10);
     product.display();
-    
+
     cout << "Ex7\n";
     int a[] = {1, 2, 3};
     int b[] = {7, 6, 5, 4};
@@ -405,11 +476,41 @@ int main()
     cout << "Ex8\n";
     ex8();
 
-
-
     cout << "Ex9\n";
-    // ex9();
-    // cout << "Ex10\n";
-    // ex10();
+    int roll, code;
+    string name;
+    cin >> roll >> name >> code;
+
+    Book book(code);
+    Student_bis student_bis(roll, name, code);
+
+    cout << "Student Details:" << endl;
+    cout << "Roll Number: " << student_bis.getRollNumber() << endl;
+    cout << "Name: " << student_bis.getName() << endl;
+
+    cout << endl;
+
+    cout << "Book Details:" << endl;
+    cout << "Book Code: " << book.getBookCode() << endl;
+    cout << "Availability: " << (book.isAvailable() ? "Available" : "Not Available") << endl;
+
+    cout << "Ex10\n";
+    string houseName, city, state;
+    int houseNumber, numRooms;
+    cin >> houseName;
+    cin >> houseNumber;
+    cin >> city;
+    cin >> state;
+    cin >> numRooms;
+
+    Room room(houseName, houseNumber, city, state, numRooms);
+
+    for (int i = 0; i < numRooms; ++i) {
+        int length, breadth, height;
+        cin >> length >> breadth >> height;
+        room.addRoomDimensions(i, length, breadth, height);
+    }
+
+    room.printHouseDetails();
     return 0;
 }

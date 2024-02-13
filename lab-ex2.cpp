@@ -189,25 +189,25 @@ void ex10()
 
 int main()
 {
-    cout << "Ex1\n";
-    ex1();
-    cout << "Ex2\n";
-    ex2();
-    cout << "Ex3\n";
-    ex3();
-    cout << "Ex4\n";
-    ex4();
-    cout << "Ex5\n";
-    ex5();
-    cout << "Ex6\n";
-    ex6();
-    cout << "Ex7\n";
-    ex7();
-    cout << "Ex8\n";
-    ex8();
-    cout << "Ex9\n";
-    ex9();
-    cout << "Ex10\n";
-    ex10();
+    // cout << "Ex1\n";
+    // ex1();
+    // cout << "Ex2\n";
+    // ex2();
+    // cout << "Ex3\n";
+    // ex3();
+    // cout << "Ex4\n";
+    // ex4();
+    // cout << "Ex5\n";
+    // ex5();
+    // cout << "Ex6\n";
+    // ex6();
+    // cout << "Ex7\n";
+    // ex7();
+    // cout << "Ex8\n";
+    // ex8();
+    // cout << "Ex9\n";
+    // ex9();
+    // cout << "Ex10\n";
+    // ex10();
     return 0;
 }
