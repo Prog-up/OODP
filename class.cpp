@@ -164,11 +164,46 @@ public:
     }
 };
 
+class Salary {
+public:
+    void Increment(int c)
+    {
+        cout << c << endl;
+    }
+
+    void Increment(int c, int b)
+    {
+        cout << c + b << endl;
+    }
+};
+
+class Attendance {
+public:
+    Attendance() { cout << "No Attendance" << endl; }
+    Attendance(string s)
+    {
+        cout << "Hello " << s << endl;
+    }
+};
+
 int main()
 {
+    Attendance stdabs;
+    string studentname;
+    cin >> studentname;
+    Attendance stdpst(studentname);
+
+    int cursal, bonus;
+    cin >> cursal;
+    cin >> cursal;
+    cin >> bonus;
+    Salary empsal;
+    empsal.Increment(cursal);
+    empsal.Increment(cursal, bonus);
+
     Happiness Purchase;
     Purchase.Meat();
-    /*
+
     int r, c;
     string n;
     cin >> r >> n >> c;
@@ -197,6 +232,6 @@ int main()
 
     GoodNum Learning;
     int N;
-    cin>>N;
-    Learning.check(N);*/
+    cin >> N;
+    Learning.check(N);
 }
