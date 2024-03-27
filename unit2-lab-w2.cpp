@@ -20,7 +20,7 @@ public:
 
     void display() const
     {
-        std::cout << "Point coordinates: (" << x << ", " << y << ")\n";
+        cout << "Point coordinates = (" << x << ", " << y << ")\n";
     }
 };
 
@@ -28,31 +28,31 @@ public:
 class StockManager
 {
 private:
-    int totalItems;
+    int totalavi;
 
 public:
-    StockManager() : totalItems(0) {}
+    StockManager() : totalavi(0) {}
 
-    void addItem(int quantity)
+    void addItem(int consumed)
     {
-        totalItems += quantity;
+        totalavi += consumed;
     }
 
-    void consumeItem(int quantity)
+    void consumeItem(int consumed)
     {
-        totalItems -= quantity;
+        totalavi -= consumed;
     }
 
     void displayStock() const
     {
-        std::cout << "Total items in stock: " << totalItems << std::endl;
+        cout << "Total items in stock = " << totalavi << endl;
     }
 
-    void displayStock(const std::string &category, int consumedQuantity) const
+    void displayStock(const string &category, int consumedQuantity) const
     {
-        std::cout << "Category: " << category << std::endl;
-        std::cout << "Consumed quantity: " << consumedQuantity << std::endl;
-        std::cout << "Remaining stock: " << (totalItems - consumedQuantity) << std::endl;
+        cout << "Category = " << category << endl
+             << "Consumed quantity = " << consumedQuantity << endl
+             << "Remaining stock = " << (totalavi - consumedQuantity) << endl;
     }
 };
 
@@ -88,10 +88,9 @@ public:
 
     void display()
     {
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-        cout << "City: " << city << endl;
-        cout << endl;
+        cout << "Name = " << name << endl
+             << "Age = " << age << endl
+             << "City = " << city << endl;
     }
 };
 
@@ -142,11 +141,11 @@ public:
     {
         if (str != nullptr)
         {
-            std::cout << "String: " << str << std::endl;
+            cout << "String = " << str << endl;
         }
         else
         {
-            std::cout << "String is empty" << std::endl;
+            cout << "String is empty" << endl;
         }
     }
 };
@@ -175,7 +174,7 @@ public:
 
     void display()
     {
-        cout << "Value: " << value << endl;
+        cout << "Value = " << value << endl;
     }
 };
 
@@ -206,7 +205,7 @@ public:
 
     void display()
     {
-        cout << "Array elements: ";
+        cout << "Array elements = ";
         for (int i = 0; i < size; i++)
         {
             cout << arr[i] << " ";
@@ -328,15 +327,15 @@ int main()
 {
     // Ex1
     Point2D defaultPoint;
-    std::cout << "Default Point:\n";
+    cout << "Default Point:\n";
     defaultPoint.display();
 
     Point2D pointWithCoords(3.5, 2.0);
-    std::cout << "\nPoint with Coordinates:\n";
+    cout << "\nPoint with Coordinates:\n";
     pointWithCoords.display();
 
     Point2D copiedPoint = pointWithCoords;
-    std::cout << "\nCopied Point:\n";
+    cout << "\nCopied Point:\n";
     copiedPoint.display();
 
     // Ex2
@@ -365,13 +364,13 @@ int main()
     StringWrapper sw2("Hello");
     StringWrapper sw3 = sw2;
 
-    std::cout << "String 1:" << std::endl;
+    cout << "String 1:" << endl;
     sw1.display();
 
-    std::cout << "String 2:" << std::endl;
+    cout << "String 2:" << endl;
     sw2.display();
 
-    std::cout << "String 3:" << std::endl;
+    cout << "String 3:" << endl;
     sw3.display();
 
     // Ex5

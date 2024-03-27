@@ -1,6 +1,7 @@
+#include <codecvt>
 #include <cstdint>
 #include <iostream>
-#include <random>
+// #include <random>
 #include <string>
 using namespace std;
 
@@ -186,8 +187,61 @@ public:
     }
 };
 
+template <typename T>
+T min(T a, T b)
+{
+    return (a < b) ? a : b;
+}
+
+template <typename T>
+T max(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+
+template <typename V>
+bool equal(V a, V b)
+{
+    return a == b;
+}
+
+// Array class
+template <typename T>
+class Array {
+private:
+    T* a;
+    int s;
+
+public:
+    Array(T* array, int len)
+    {
+        a = array;
+        s = len;
+    }
+    void display()
+    {
+        int i;
+        cout << "Array = [";
+        for (i = 0; i < s - 1; i++) {
+            cout << a[i] << ", ";
+        }
+        cout << a[i] << "]\n";
+    }
+};
+
+// template <class A, class B>
+//     class Couple >
+
 int main()
 {
+    int a[] = { 69, 78, 90, 79 };
+    char b[] = { 69, 78, 90, 79 };
+    Array<int> obj1(a, 4);
+    Array<char> obj2(b, 4);
+    obj1.display();
+    obj2.display();
+
+    /*
     Attendance stdabs;
     string studentname;
     cin >> studentname;
@@ -234,4 +288,5 @@ int main()
     int N;
     cin >> N;
     Learning.check(N);
+    */
 }

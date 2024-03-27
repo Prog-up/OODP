@@ -1,14 +1,35 @@
 #include <iostream>
 using namespace std;
 
+template <class T1, class T2>
+class Operation
+{
+public:
+    T1 x;
+    T2 y;
+
+
+    Operation(T1 a, T2 b)
+    {
+        x = a;
+        y = b;
+    }
+    void Add(const Operation& other)
+    {
+        x += other.x;
+        y += other.y;
+    }
+    void Sub(const Operation& other)
+    {
+        x -= other.x;
+        y -= other.y;
+    }
+};
+
 int main()
 {
-    int angle1,angle2,angle3,sumofangles;
-    cin >> angle1 >> angle2 >> angle3;
-    sumofangles = angle1 + angle2 + angle3;
-    if (sumofangles == 180)
-        cout << "Angles are valid\n";
-    else
-        cout << "Angles are not valid\n";
-    return 0;
+    Operation<int, float> op1(0, 0.3f);
+    Operation<int, float> op2(2, 3.3f);
+    op1.Add(op2);
+    cout << op1.y << endl;
 }
